@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madhurima's Makeover</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff7f9;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Background slideshow layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  animation: bgSlideshow 20s infinite ease-in-out;
+}
+
+/* Soft overlay for readability */
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 240, 245, 0.4); /* light pink overlay */
+  z-index: -1;
+}
+
+/* Background animation */
+@keyframes bgSlideshow {
+  0% {
+    background-image: url("WhatsApp Image_10.jpeg");
+  }
+  25% {
+    background-image: url("WhatsApp Image_11.jpeg");
+  }
+  50% {
+    background-image: url("images/bg3.jpg");
+  }
+  75% {
+    background-image: url("images/bg4.jpg");
+  }
+  100% {
+    background-image: url("WhatsApp Image_10.jpeg");
+  }
+}
+    /* NAVBAR */
+    nav {
+      background: #ff4d6d;
+      padding: 15px 20px;
+      position: fit;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.2s;
+    }
+
+    .menu a:hover { opacity: 0.7; }
+
+    header {
+      background: linear-gradient(135deg,#ff4d6d,#ff8fa3);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 { margin: 0; font-size: 32px; }
+
+    section { padding: 40px 20px; }
+
+    h2 { text-align: center; color: #ff4d6d; }
+    h3 { text-align: center; color: #ff4d6d; }
+    h4 { text-align: center; color: #ff4d6d; }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .card:hover { transform: scale(1.03); }
+
+    .card img, .card video {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      padding: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .service-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    h5 { text-align: center; color: white; font-size: 20px; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff1493;
+            color: white;
+            margin-top: 40px;
+        }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      position: relative;
+    }
+
+    .modal img, .modal video {
+      width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* WHATSAPP BUTTON */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Madhurima's Makeover</div>
+  <div class="menu">
+    <a href="#home">Home</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<header id="home">
+  <h1>ISO Certified Professional Makeup Artist</h1>
+  <p>Bridal • Party • HD • Engagement</p>
+</header>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <h3>Gallery</h3>
+  <div class="gallery">
+
+    <!-- BRIDAL WITH MULTIPLE PHOTOS -->
+    <div class="card" onclick="openGallery(['WhatsApp Image_2.jpeg','WhatsApp Image_5.jpeg','WhatsApp Image_6.jpeg','WhatsApp Image_7.jpeg','WhatsApp Image_8.jpeg'])">
+      <img src="WhatsApp Image_2.jpeg" loading="lazy">
+      <div class="card-title">Bridal Makeup</div>
+    </div>
+
+    <div class="card" onclick="openGallery(['WhatsApp Image_1.jpeg','WhatsApp Image_13.jpeg','WhatsApp Image_14.jpeg','WhatsApp Image_16.jpeg','WhatsApp Image_17.jpeg'])">
+      <img src="WhatsApp Image_1.jpeg" loading="lazy">
+      <div class="card-title">Engagement Makeup</div>
+    </div>
+
+    <div class="card" onclick="openGallery(['WhatsApp Image_4.jpeg','WhatsApp Image_15.jpeg','S25665(A).jpeg'])">
+      <img src="WhatsApp Image_4.jpeg" loading="lazy">
+      <div class="card-title">SFX</div>
+    </div>
+
+    <div class="card" onclick="openGallery(['WhatsApp Image_3.jpeg','WhatsApp Image_11.jpeg','WhatsApp Image_12.jpeg'])">
+      <img src="WhatsApp Image_3.jpeg" loading="lazy">
+      <div class="card-title">Party Makeup</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Services</h2>
+  <div class="services">
+    <div class="service-box">💄 Bridal Makeup</div>
+    <div class="service-box">✨ Party Makeup</div>
+    <div class="service-box">📸 HD Makeup</div>
+    <div class="service-box">🎨 Engagement Makeup</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p><strong>Phone / WhatsApp:</strong> 8617791305</p>
+    <p><strong>Location:</strong> Available for bookings</p>
+    <p>DM on WhatsApp for bookings and price details 💕</p>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <div id="mediaContainer"></div>
+  </div>
+</div>
+
+<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/918617791305" target="_blank">
+  WhatsApp
+</a>
+
+<script>
+  let galleryImages = [];
+let currentIndex = 0;
+
+function openGallery(images) {
+  galleryImages = images;
+  currentIndex = 0;
+  showImage();
+}
+
+function showImage() {
+  const modal = document.getElementById('modal');
+  const container = document.getElementById('mediaContainer');
+
+  container.innerHTML = `
+    <div style="position:relative;text-align:center;">
+      <img src="${galleryImages[currentIndex]}" style="max-width:100%;border-radius:10px"/>
+      <div style="margin-top:10px;color:white;">
+        <button onclick="prevImage()">⬅ Prev</button>
+        <button onclick="nextImage()">Next ➡</button>
+      </div>
+    </div>
+  `;
+
+  modal.style.display = 'flex';
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  showImage();
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  showImage();
+}
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target.id === 'modal') closeModal();
+  });
+</script>
+
+</body>
+
+<footer>
+    <h5>An ISO 9001:2015 certified</h5>
+</footer>
+</html>
